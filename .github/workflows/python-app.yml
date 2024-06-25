@@ -14,23 +14,18 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: '3.x'
+        python-version: '3.x' 
 
     - name: Install SDL dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y libsdl2-dev libsmpeg-dev libportmidi-dev libfreetype6-dev
+        sudo apt-get install -y libsdl2-dev libsmpeg-dev libportmidi-dev libfreetype6-dev xvfb
 
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install pygame
-        pip install pytest
-
-    - name: Run the solver
-      run: |
-        python solver.py
+        pip install pygame pytest
 
     - name: Run tests
       run: |
-        pytest tests/
+        xvfb-run -a pytest tests/
