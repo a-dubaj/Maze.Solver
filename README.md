@@ -23,7 +23,7 @@ This project is a maze solver using Pygame. It provides functionality to solve a
 ### On Other Systems
 
 Refer to the Pygame installation guide for your operating system:
-Pygame Installation Guide
+[Pygame Installation Guide](https://www.pygame.org/wiki/GettingStarted)
 
 ### Running the Project
 1. Clone the repository:
