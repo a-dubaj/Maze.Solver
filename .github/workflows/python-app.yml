@@ -30,4 +30,5 @@ jobs:
       env:
         PYTHONPATH: ${{ github.workspace }}
       run: |
-        xvfb-run -a pytest tests/
+        chmod +x log_with_timestamp.sh
+        xvfb-run -a pytest tests/ 2>&1 | ./log_with_timestamp.sh
